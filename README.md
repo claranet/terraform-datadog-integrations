@@ -17,6 +17,6 @@ module "datadog-integration" {
 
 ```
 variable "datadog_aws_external_id" {
-  default = "xxx"
+  default = "xxx" # as defined in the Datadog console
 }
 ```
