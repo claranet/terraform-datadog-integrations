@@ -1,34 +1,25 @@
-AWS Configuration for Datadog Integration
-=========================================
-
-How to use this module
-----------------------
-
-```
-module "datadog-aws-integration" {
-  source                 = "git::ssh://git@bitbucket.org/morea/terraform.feature.datadog.integration.aws.git?ref={revision}"
-
-  aws_external_id = "${var.aws_external_id}"
-}
-```
+Datadog Integrations
+====================
 
 Purpose
 -------
 
-Creates a role with attached policy to allows Datadog to fetch metrics
+This repository is used to store all datadog integrations configurations :
 
-* Creates IAM role
-* Creates IAM policy
-* Attach policy to role
+* [aws](https://bitbucket.org/morea/terraform.feature.datadog.integrations/src/master/cloud/aws/)
 
-Inputs
-------
+How to use a module
+-------------------
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| aws_external_id |  | string | - | yes |
+```
+module "datadog-my-integration" {
+  source          = "git::ssh://git@bitbucket.org/morea/terraform.feature.datadog.integrations.git//my/integration?ref={revision}"
+  # define specific inputs according of the integration manual
+}
+```
+`my/integration` represents the path to an integration directory listed above
 
 Related documentation
 ---------------------
 
-DataDog documentation: [https://docs.datadoghq.com/integrations/amazon_web_services/#setup](https://docs.datadoghq.com/integrations/amazon_web_services/#setup)
+DataDog documentation: [https://docs.datadoghq.com/integrations](https://docs.datadoghq.com/integrations)
