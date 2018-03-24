@@ -1,1 +1,2 @@
-variable datadog_aws_external_id {}
+variable "aws_external_id" {}
+
