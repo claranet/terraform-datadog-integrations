@@ -26,7 +26,15 @@ Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| aws_external_id |  | string | - | yes |
+| aws_external_id | Token provided by DataDog to connect with the AWS account | string | - | yes |
+
+Outputs
+-------
+
+| Name | Description |
+|------|-------------|
+| aws_role_arn | The role ARN of the DataDog integration |
+| aws_role_name | The IAM role name of the DataDog integration |
 
 Related documentation
 ---------------------

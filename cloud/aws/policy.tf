@@ -62,4 +62,3 @@ resource "aws_iam_policy" "dd_integration_policy" {
 }
 EOF
 }
-
