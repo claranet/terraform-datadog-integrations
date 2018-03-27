@@ -20,4 +20,3 @@ resource "aws_iam_policy_attachment" "allow_dd_role" {
   roles      = ["${aws_iam_role.dd_integration_role.name}"]
   policy_arn = "${aws_iam_policy.dd_integration_policy.arn}"
 }
-
