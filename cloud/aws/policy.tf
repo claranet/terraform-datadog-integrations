@@ -1,7 +1,7 @@
 resource "aws_iam_policy" "dd_integration_policy" {
   name        = "DatadogAWSIntegrationPolicy"
   path        = "/"
-  description = "Datadog AWS Integration Policy"
+  description = "Datadog integration policy according to https://docs.datadoghq.com/integrations/aws/"
 
   policy = <<EOF
 {
@@ -62,4 +62,3 @@ resource "aws_iam_policy" "dd_integration_policy" {
 }
 EOF
 }
-

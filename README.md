@@ -1,22 +1,25 @@
-# README #
+Datadog Integrations
+====================
 
-This repository is used to configure AWS integration on Datadog. 
+Purpose
+-------
 
+This repository is used to store all datadog integrations configurations :
 
-### Module Declaration example ###
+* [aws](https://bitbucket.org/morea/terraform.feature.datadog.integrations/src/master/cloud/aws/)
+
+How to use a module
+-------------------
 
 ```
-module "datadog-integration" {
-  source = "git::ssh://git@bitbucket.org/morea/terraform.datadog.integration.aws.git"
-
-  datadog_aws_external_id = "${var.datadog_aws_external_id}"
+module "datadog-my-integration" {
+  source          = "git::ssh://git@bitbucket.org/morea/terraform.feature.datadog.integrations.git//my/integration?ref={revision}"
+  # define specific inputs according of the integration manual
 }
 ```
+`my/integration` represents the path to an integration directory listed above
 
-### Input Declaration example ###
+Related documentation
+---------------------
 
-```
-variable "datadog_aws_external_id" {
-  default = "xxx" # as defined in the Datadog console
-}
-```
+DataDog documentation: [https://docs.datadoghq.com/integrations](https://docs.datadoghq.com/integrations)
