@@ -8,7 +8,7 @@ How to use this module
 module "datadog-aws-integration" {
   source          = "git::ssh://git@bitbucket.org/morea/terraform.feature.datadog.integrations.git//cloud/aws?ref={revision}"
 
-  aws_external_id = "${var.aws_external_id}"
+  datadog_aws_external_id = "${var.aws_external_id}"
 }
 ```
 
@@ -26,7 +26,7 @@ Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| aws_external_id | Token provided by DataDog to connect with the AWS account | string | - | yes |
+| datadog_aws_external_id | Token provided by DataDog to connect with the AWS account | string | - | yes |
 
 Outputs
 -------
