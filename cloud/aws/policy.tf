@@ -3,7 +3,7 @@ resource "aws_iam_policy" "dd_integration_policy" {
   path        = "/"
   description = "Datadog integration policy according to https://docs.datadoghq.com/integrations/aws/"
 
-  policy = "${aws_iam_policy_document.datadog_integration_policy.json}"
+  policy = "${data.aws_iam_policy_document.datadog_integration_policy.json}"
 }
 
 data "aws_iam_policy_document" "datadog_integration_policy" {
