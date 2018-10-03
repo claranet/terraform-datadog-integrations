@@ -73,7 +73,7 @@ data "aws_iam_policy_document" "datadog_integration_policy" {
       "support:*",
       "tag:GetResources",
       "tag:GetTagKeys",
-      "tag:GetTagValues"
+      "tag:GetTagValues",
     ]
 
     resources = ["*"]
