@@ -6,9 +6,9 @@ How to use this module
 
 ```
 module "datadog-aws-integration" {
-  source          = "git::ssh://git@bitbucket.org/morea/terraform.feature.datadog.integrations.git//cloud/aws?ref={revision}"
+  source      = "git::ssh://git@bitbucket.org/morea/terraform.feature.datadog.integrations.git//cloud/aws?ref={revision}"
 
-  datadog_aws_external_id = "${var.aws_external_id}"
+  aws_account = "${var.aws_account}"
 }
 ```
 
@@ -21,20 +21,22 @@ Creates a role with attached policy to allows Datadog to fetch metrics
 * Creates IAM policy
 * Attach policy to role
 
-Inputs
-------
+## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| datadog_aws_external_id | Token provided by DataDog to connect with the AWS account | string | - | yes |
+| account\_specific\_namespace\_rules | Namespaces to limite metric collection for datadog aws integration | map | `{}` | no |
+| aws\_account |  | string | n/a | yes |
+| datadog\_aws\_account\_id | AWS account_id of Datadog | string | `"464622532012"` | no |
+| filter\_tags | Filters tags to limit metrics collection on EC2 for datadog aws integration | list | `[ "dd_monitoring:enabled" ]` | no |
+| host\_tags | Tags to add all metrics retrieved from the datadog aws integration | list | `[]` | no |
 
-Outputs
--------
+## Outputs
 
 | Name | Description |
 |------|-------------|
-| aws_role_arn | The role ARN of the DataDog integration |
-| aws_role_name | The IAM role name of the DataDog integration |
+| aws\_role\_arn | The role ARN of the DataDog integration |
+| aws\_role\_name | The IAM role name of the DataDog integration |
 
 Related documentation
 ---------------------
