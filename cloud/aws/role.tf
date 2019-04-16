@@ -21,7 +21,7 @@ data "aws_iam_policy_document" "dd_trust_relationship" {
 
     condition {
       test     = "StringEquals"
-      values   = ["${var.datadog_aws_external_id}"]
+      values   = ["${datadog_integration_aws.datadog_integration_aws.external_id}"]
       variable = "sts:ExternalId"
     }
   }
