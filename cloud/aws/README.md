@@ -6,7 +6,7 @@ How to use this module
 
 ```
 module "datadog-aws-integration" {
-  source      = "git::ssh://git@bitbucket.org/morea/terraform.feature.datadog.integrations.git//cloud/aws?ref={revision}"
+  source      = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//cloud/aws?ref={revision}"
 
   aws_account = "${var.aws_account}"
 }
