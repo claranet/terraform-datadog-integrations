@@ -12,6 +12,7 @@ data "aws_iam_policy_document" "datadog_integration_policy" {
     effect = "Allow"
 
     actions = [
+      "apigateway:GET",
       "autoscaling:Describe*",
       "budgets:ViewBudget",
       "cloudfront:GetDistributionConfig",
@@ -74,6 +75,8 @@ data "aws_iam_policy_document" "datadog_integration_policy" {
       "tag:GetResources",
       "tag:GetTagKeys",
       "tag:GetTagValues",
+      "xray:BatchGetTraces",
+      "xray:GetTraceSummaries",
     ]
 
     resources = ["*"]
