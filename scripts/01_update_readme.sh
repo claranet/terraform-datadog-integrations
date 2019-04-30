@@ -5,11 +5,11 @@ source "$(dirname $0)/utils.sh"
 goto_root
 
 ## root README generator
-# only keep current README from begining to "Monitors summary" section (delete monitors list)
+# only keep current README from begining to "Integrations summary" section (delete integrations list)
 sed -i '/### Integrations summary ###/q' README.md
 # add a newline after listing section
 echo >> README.md
-# loop over all ready monitors sets on the repo
+# loop over all ready integrations sets on the repo
 for path in $(find "$(get_scope $1)" -mindepth 1 \( -path './scripts' -o -path '*/\.*' \) -prune -o -type d -print | sort -fdbi); do
     # split path in directories
     directories=($(list_dirs $path))
@@ -18,7 +18,7 @@ for path in $(find "$(get_scope $1)" -mindepth 1 \( -path './scripts' -o -path '
         ## add tabulation for every subdirectory
         echo -en "\t" >> README.md
     done
-    # add link to list of monitors sets
+    # add link to list of integrations modules
     echo -en "- [$(basename ${path})](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/" >> README.md
     # add path to link
     for directory in "${directories[@]}"; do
@@ -31,7 +31,7 @@ done
 # this is the pattern from where custom information is saved to be restored
 PATTERN_DOC="Related documentation"
 
-# loop over every monitors set readme
+# loop over every integrations set readme
 for path in $(find "$(get_scope $1)" -name 'integrations-*.tf' -print | sort -fdbi); do
     cd $(dirname $path)
     EXIST=0
@@ -55,7 +55,7 @@ for path in $(find "$(get_scope $1)" -name 'integrations-*.tf' -print | sort -fd
 ## How to use this module
 
 \`\`\`
-module "datadog-monitors-${module_dash}" {
+module "datadog-integrations-${module_dash}" {
   source = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//${module_slash}?ref={revision}"
 EOF
 
@@ -65,7 +65,7 @@ EOF
         sed -n '/^[[:space:]]*source[[:space:]]*=.*/,/^\}/p' README.md.bak | tail -n +2 | head -n -1 >> README.md
     fi
 
-    # close block and generate the next until list of monitors
+    # close block and generate the next until list of integrations
     cat <<EOF >> README.md
 }
 \`\`\`
