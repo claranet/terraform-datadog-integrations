@@ -17,6 +17,6 @@ variable "host_tags" {
 }
 
 variable "account_specific_namespace_rules" {
-  description = "Namespaces to limit metric collection for datadog aws integration"
+  description = "Namespaces to limite metric collection for datadog aws integration"
   default     = {}
 }
