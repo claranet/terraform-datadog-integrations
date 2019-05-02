@@ -1,5 +1,5 @@
 resource "aws_iam_role" "dd_integration_role" {
-  name        = "DatadogAWSIntegrationRole"
+  name        = "${local.role_name}"
   description = "Datadog AWS Integration Role according to https://docs.datadoghq.com/integrations/aws"
 
   assume_role_policy = "${data.aws_iam_policy_document.dd_trust_relationship.json}"
