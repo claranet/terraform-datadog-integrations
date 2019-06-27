@@ -1,8 +1,9 @@
-variable "aws_account" {}
+variable "aws_account" {
+}
 
 variable "datadog_aws_account_id" {
   description = "AWS account_id of Datadog"
-  type        = "string"
+  type        = string
   default     = "464622532012"
 }
 
@@ -20,3 +21,4 @@ variable "account_specific_namespace_rules" {
   description = "Namespaces to limit metric collection for datadog aws integration"
   default     = {}
 }
+
