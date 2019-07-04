@@ -72,6 +72,7 @@ EOF
     # close block and generate the next until list of integrations
     cat <<EOF >> README.md
 }
+
 \`\`\`
 
 EOF
