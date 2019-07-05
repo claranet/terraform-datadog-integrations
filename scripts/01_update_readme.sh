@@ -4,13 +4,17 @@ set -xueo pipefail
 source "$(dirname $0)/utils.sh"
 goto_root
 
+# download awk script to hack terraform-docs
+TERRAFORM_AWK="/tmp/terraform-docs.awk"
+curl -Lo ${TERRAFORM_AWK} "https://raw.githubusercontent.com/cloudposse/build-harness/master/bin/terraform-docs.awk"
+
 ## root README generator
 # only keep current README from begining to "Integrations summary" section (delete integrations list)
 sed -i '/### Integrations summary ###/q' README.md
 # add a newline after listing section
 echo >> README.md
 # loop over all ready integrations sets on the repo
-for path in $(find "$(get_scope $1)" -mindepth 1 \( -path './scripts' -o -path '*/\.*' \) -prune -o -type d -print | sort -fdbi); do
+for path in $(find "$(get_scope $1)" -mindepth 1 -type d ! -path '*/.*' ! -path './scripts*' -print | sort -fdbi); do
     # split path in directories
     directories=($(list_dirs $path))
     # loop over directories in path
@@ -31,7 +35,7 @@ done
 # this is the pattern from where custom information is saved to be restored
 PATTERN_DOC="Related documentation"
 
-# loop over every integrations set readme
+# loop over every integrations modules readme
 for path in $(find "$(get_scope $1)" -name 'integrations-*.tf' -print | sort -fdbi); do
     cd $(dirname $path)
     EXIST=0
@@ -68,11 +72,16 @@ EOF
     # close block and generate the next until list of integrations
     cat <<EOF >> README.md
 }
+
 \`\`\`
 
 EOF
+    # hack for terraform-docs with terraform 0.12 / HCL2 support
+    tmp_tf=$(mktemp -d)
+    awk -f ${TERRAFORM_AWK} ./*.tf > ${tmp_tf}/main.tf
     # auto generate terraform docs (inputs and outputs)
-    terraform-docs --with-aggregate-type-defaults md table ./ >> README.md
+	terraform-docs --with-aggregate-type-defaults md table ${tmp_tf}/ >> README.md
+	rm -fr ${tmp_tf}
     # if README does not exist
     if [[ $EXIST -eq 0 ]]; then
         # Simply add empty documentation section

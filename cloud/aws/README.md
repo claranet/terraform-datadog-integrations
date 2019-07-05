@@ -6,8 +6,9 @@
 module "datadog-integrations-cloud-aws" {
   source = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//cloud/aws?ref={revision}"
 
-  aws_account = "${var.aws_account}"
+  aws_account = var.aws_account
 }
+
 ```
 
 ## Inputs
@@ -30,3 +31,36 @@ module "datadog-integrations-cloud-aws" {
 ## Related documentation
 
 DataDog documentation: [https://docs.datadoghq.com/integrations/amazon_web_services/#setup](https://docs.datadoghq.com/integrations/amazon_web_services/#setup)
+
+## Requirements
+
+You need to configure you AWS provider.
+Credentials could be set in your `terraform.tfvars`.
+
+```
+variable "aws_region" {
+  type = string
+}
+
+variable "aws_account" {
+  type = string
+}
+
+variable "aws_access_key" {
+}
+
+variable "aws_secret_key" {
+}
+
+variable "aws_token" {
+}
+
+provider "aws" {
+  region     = var.aws_region
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+  token      = var.aws_token
+}
+
+```
+
