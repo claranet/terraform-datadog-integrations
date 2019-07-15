@@ -16,9 +16,9 @@ module "datadog-integrations-alerting-pagerduty" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| api\_token |  | string | n/a | yes |
-| services |  | map(string) | n/a | yes |
-| subdomain |  | string | `"claranet"` | no |
+| api\_token | Pagerduty API token | string | n/a | yes |
+| services | Pagerduty service name and service key couple | map(string) | n/a | yes |
+| subdomain | Pagerduty subdomain for your organisation | string | `"claranet"` | no |
 
 ## Related documentation
 
