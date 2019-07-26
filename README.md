@@ -96,3 +96,4 @@ The `//` is very important, it's a terraform specific syntax used to separate gi
 
 - [cloud](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/)
 	- [aws](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/aws/)
+	- [gcp](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/gcp/)
