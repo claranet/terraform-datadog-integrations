@@ -1,0 +1,10 @@
+variable "gcp_project" {
+  type = string
+  default = "cloudpublic-sandbox"
+}
+
+provider "google" {
+  version = "~> 2.10.0"
+
+  project = var.gcp_project
+}
