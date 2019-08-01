@@ -6,7 +6,7 @@ resource "datadog_integration_pagerduty" "pagerduty" {
 
 resource "datadog_integration_pagerduty_service_object" "service" {
   depends_on   = ["datadog_integration_pagerduty.pagerduty"]
-  count        = length(var.services)
-  service_name = element(keys(var.services), count.index)
-  service_key  = lookup(var.services, element(keys(var.services), count.index))
+  for_each     = var.services
+  service_name = each.key
+  service_key  = each.value
 }
