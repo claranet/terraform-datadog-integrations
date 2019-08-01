@@ -1,15 +1,15 @@
 variable "subdomain" {
-  type = string
+  type        = string
   description = "Pagerduty subdomain for your organisation"
-  default = "claranet"
+  default     = "claranet"
 }
 
 variable "api_token" {
-  type = string
+  type        = string
   description = "Pagerduty API token"
 }
 
 variable "services" {
-  type = map(string)
+  type        = map(string)
   description = "Pagerduty service name and service key couple"
 }
