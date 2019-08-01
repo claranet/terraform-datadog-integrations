@@ -26,6 +26,8 @@ Pagerduty documentation [https://www.pagerduty.com/docs/guides/datadog-integrati
 
 ## Requirements
 
+**WARNING:** The Pagerduty integration has to first be manually enabled in [the Datadog web console](https://myaccount.datadoghq.com/account/settings#integrations/pagerduty)
+
 You need to configure your Pagerduty services into a map like:
 Values could be set from your `terraform.tfvars`.
 
