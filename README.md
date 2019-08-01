@@ -27,11 +27,11 @@ After any change on this repo, you need to run the `./scripts/auto_update.sh ./`
 
 ### Terraform ###
 
-Version >= 0.12 is required to use these modules of monitors.
+Here is the minimum version required to use these modules of integrations.
 
 ```
 terraform {
-  required_version = "~> 0.12"
+  required_version = ">= 0.12.6"
 }
 
 ```
@@ -82,7 +82,7 @@ variable "datadog_app_key" {
 ```
 # integrations modules to declare ...
 module "datadog-my-integration" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//my/monitors/set?ref={revision}"
+  source = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//my/integration/set?ref={revision}"
 #  Rest of configuration will depends on each module, please see its README.md
 }
 
