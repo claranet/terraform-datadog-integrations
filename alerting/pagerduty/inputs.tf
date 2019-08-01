@@ -7,6 +7,7 @@ variable "subdomain" {
 variable "api_token" {
   type        = string
   description = "Pagerduty API token"
+  default     = ""
 }
 
 variable "services" {
