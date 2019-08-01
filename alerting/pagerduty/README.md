@@ -6,7 +6,6 @@
 module "datadog-integrations-alerting-pagerduty" {
   source = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//alerting/pagerduty?ref={revision}"
 
-  api_token = var.pagerduty_token
   services  = var.pagerduty_services
 }
 
@@ -16,7 +15,7 @@ module "datadog-integrations-alerting-pagerduty" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| api\_token | Pagerduty API token | string | n/a | yes |
+| api\_token | Pagerduty API token | string | `""` | no |
 | services | Pagerduty service name and service key couple | map(string) | n/a | yes |
 | subdomain | Pagerduty subdomain for your organisation | string | `"claranet"` | no |
 
