@@ -24,9 +24,9 @@ module "datadog-integrations-cloud-gcp" {
 
 DataDog documentation: [https://docs.datadoghq.com/integrations/google_cloud_platform/#setup](https://docs.datadoghq.com/integrations/google_cloud_platform/#setup)
 
-**WARNING:** The GCP integration has to first be manually enabled in the Datadog web console: https://myaccount.datadoghq.com/account/settings#integrations/google-cloud-platform
-
 ## Requirements
+
+**WARNING:** The GCP integration has to first be manually enabled in [the Datadog web console](https://myaccount.datadoghq.com/account/settings#integrations/google-cloud-platform)
 
 You need to configure you GCP provider.
 Credentials could be set in your `terraform.tfvars`.

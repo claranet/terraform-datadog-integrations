@@ -42,7 +42,7 @@ Here is the last tester terraform provider version for datadog but next versions
 
 ```
 provider "datadog" {
-  version = "2.0.2" # last tested working version
+  version = "2.1.0" # last tested working version
 
   api_key = var.datadog_api_key
   app_key = var.datadog_app_key
@@ -94,6 +94,8 @@ The `//` is very important, it's a terraform specific syntax used to separate gi
 
 ### Integrations summary ###
 
+- [alerting](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/alerting/)
+	- [pagerduty](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/alerting/pagerduty/)
 - [cloud](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/)
 	- [aws](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/aws/)
 	- [gcp](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/gcp/)
