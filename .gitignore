@@ -1,6 +1,3 @@
-*.bak
-.idea
-*.iml
 .terraform
-main.tf
 terraform.tfvars
+/.env.sh
