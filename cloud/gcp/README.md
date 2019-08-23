@@ -1,4 +1,4 @@
-# CLOUD GCP DataDog integration
+# CLOUD GCP DataDog integrations
 
 ## How to use this module
 
