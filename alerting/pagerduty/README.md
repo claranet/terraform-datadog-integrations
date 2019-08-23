@@ -1,4 +1,4 @@
-# ALERTING PAGERDUTY DataDog integration
+# ALERTING PAGERDUTY DataDog integrations
 
 ## How to use this module
 
