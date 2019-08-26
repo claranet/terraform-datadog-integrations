@@ -1,4 +1,4 @@
-# CLOUD AWS DataDog integration
+# CLOUD AWS DataDog integrations
 
 ## How to use this module
 
