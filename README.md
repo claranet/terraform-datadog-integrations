@@ -8,7 +8,7 @@ First, you may refresh your knowledge and look at the [terminology](https://conf
 
 To contribute you will need to [report an issue](https://confluence.fr.clara.net/display/DAT/Project+and+Workflow) and create a branch with its Jira ID.
 
-After any change, you will need to run the [auto update scripts](./scripts/README.md) to make sure all is up to date otherwise the CI pipeline will fail.
+After any change, you will need to run the [auto update scripts](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/scripts/blob/master/README.md) to make sure all is up to date otherwise the CI pipeline will fail.
 
 ## Important notes ##
 
