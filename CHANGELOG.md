@@ -1,4 +1,19 @@
 
+# v3.1.0 (September 06, 2019)
+
+## Improvement
+
+*   [[MON-486](https://claranet-morea.atlassian.net/browse/MON-486)] - Remove workaround for here doc fmt now it is fixed in terraform 0.12.6
+*   [[MON-494](https://claranet-morea.atlassian.net/browse/MON-494)] - Refactor auto update scripts
+*   [[MON-504](https://claranet-morea.atlassian.net/browse/MON-504)] - Update terraform and provider versions
+
+## New Feature
+
+*   [[MON-370](https://claranet-morea.atlassian.net/browse/MON-370)] - Terraform feature for GCP integration
+*   [[MON-413](https://claranet-morea.atlassian.net/browse/MON-413)] - Terraform feature for pagerduty integration
+*   [[MON-485](https://claranet-morea.atlassian.net/browse/MON-485)] - docker image for datadog terraform
+*   [[MON-490](https://claranet-morea.atlassian.net/browse/MON-490)] - Changelog generation on git repos
+
 # v3.0.0 (July 05, 2019)
 
 ## Epic
