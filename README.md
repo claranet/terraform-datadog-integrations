@@ -68,7 +68,7 @@ variable "datadog_app_key" {
 ```
 # integrations modules to declare ...
 module "datadog-my-integration" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//my/integration/set?ref={revision}"
+  source = "git::ssh://git@github.com/claranet/terraform-datadog-integrations.git//my/integration/set?ref={revision}"
 #  Rest of configuration will depends on each module, please see its README.md
 }
 
@@ -80,8 +80,8 @@ module "datadog-my-integration" {
 
 ### Integrations summary
 
-- [alerting](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/alerting/)
-	- [pagerduty](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/alerting/pagerduty/)
-- [cloud](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/)
-	- [aws](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/aws/)
-	- [gcp](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/tree/master/cloud/gcp/)
+- [alerting](https://github.com/claranet/terraform-datadog-integrations/tree/master/alerting/)
+	- [pagerduty](https://github.com/claranet/terraform-datadog-integrations/tree/master/alerting/pagerduty/)
+- [cloud](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/)
+	- [aws](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/aws/)
+	- [gcp](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/gcp/)

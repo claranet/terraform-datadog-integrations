@@ -4,7 +4,7 @@
 
 ```
 module "datadog-integrations-alerting-pagerduty" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations.git//alerting/pagerduty?ref={revision}"
+  source = "git::ssh://git@github.com/claranet/terraform-datadog-integrations.git//alerting/pagerduty?ref={revision}"
 
   services  = var.pagerduty_services
 }
