@@ -5,7 +5,7 @@ This repository aims to help to configure [Datadog](https://www.datadoghq.com/) 
 
 ## Important notes
 
-* This repository provide multiple Terraform module which could be imported, you must choose the one(s) you need.
+* This repository provide multiple Terraform modules which could be imported, you must choose the one(s) you need.
 * Each module should be usable by default but you should be able to configure some specicities if you need.
 * You will find a complete `README.md` on each module, explaining how to use it.
 
