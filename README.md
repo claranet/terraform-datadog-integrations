@@ -63,7 +63,7 @@ variable "datadog_app_key" {
 
 ```
 
-## Modules declaration example
+### Modules declaration example
 
 ```
 # integrations modules to declare ...
@@ -78,7 +78,7 @@ module "datadog-my-integration" {
 * The `//` is very important, it's a terraform specific syntax used to separate git url and folder path.
 * `my/integration` represents the path to an integration directory listed below.
 
-### Integrations summary
+## Integrations summary
 
 - [alerting](https://github.com/claranet/terraform-datadog-integrations/tree/master/alerting/)
 	- [pagerduty](https://github.com/claranet/terraform-datadog-integrations/tree/master/alerting/pagerduty/)
