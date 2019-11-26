@@ -11,7 +11,7 @@ resource "datadog_integration_pagerduty" "pagerduty" {
 }
 
 resource "datadog_integration_pagerduty_service_object" "service" {
-  depends_on   = ["datadog_integration_pagerduty.pagerduty"]
+  depends_on   = [datadog_integration_pagerduty.pagerduty]
   for_each     = var.services
   service_name = each.key
   service_key  = each.value
