@@ -1,4 +1,10 @@
 resource "datadog_integration_pagerduty" "pagerduty" {
+  lifecycle {
+    ignore_changes = [
+      api_token
+    ]
+  }
+
   individual_services = true
   subdomain           = var.subdomain
   api_token           = var.api_token
