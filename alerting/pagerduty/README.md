@@ -26,17 +26,12 @@ Pagerduty documentation [https://www.pagerduty.com/docs/guides/datadog-integrati
 
 ## Requirements
 
-**WARNING:** The Pagerduty integration has to first be manually enabled in [the Datadog web console](https://myaccount.datadoghq.com/account/settings#integrations/pagerduty)
+**WARNING:** tested with Datadog provider 2.3.0 and no manual action seems needed to apply this module but Pagerduty integration
+may need first be manually enabled in [the Datadog web console](https://myaccount.datadoghq.com/account/settings#integrations/pagerduty)
 
 You need to configure your Pagerduty services into a map like:
-Values could be set from your `terraform.tfvars`.
 
 ```
-variable "pagerduty_token" {
-  type    = "string"
-  default = "1234567"
-}
-
 variable "pagerduty_services" {
   default = {
     Public_Cloud_FR_-_Team_-_Client_HNO    = "98765432198765432198765432198765"
@@ -46,3 +41,4 @@ variable "pagerduty_services" {
 
 ```
 
+Values could be set from your `terraform.tfvars`.
