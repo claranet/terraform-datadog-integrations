@@ -4,7 +4,8 @@
 
 ```
 module "datadog-integrations-cloud-aws" {
-  source = "git::ssh://git@github.com/claranet/terraform-datadog-integrations.git//cloud/aws?ref={revision}"
+  source = "claranet/integrations/datadog//cloud/aws"
+  version = "{revision}"
 
   aws_account = var.aws_account
 }
