@@ -4,7 +4,8 @@
 
 ```
 module "datadog-integrations-cloud-gcp" {
-  source = "git::ssh://git@github.com/claranet/terraform-datadog-integrations.git//cloud/gcp?ref={revision}"
+  source = "claranet/integrations/datadog//cloud/gcp"
+  version = "{revision}"
 
   gcp_service_account_id = var.gcp_service_account_id
   gcp_project_id         = var.gcp_project_id

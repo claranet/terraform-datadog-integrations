@@ -68,7 +68,9 @@ variable "datadog_app_key" {
 ```
 # integrations modules to declare ...
 module "datadog-my-integration" {
-  source = "git::ssh://git@github.com/claranet/terraform-datadog-integrations.git//my/integration/set?ref={revision}"
+  source = "claranet/integrations/datadog//my/integration/set"
+  version = "{revision}"
+
 #  Rest of configuration will depends on each module, please see its README.md
 }
 
