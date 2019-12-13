@@ -1,4 +1,14 @@
 
+# v3.2.0 (December 13, 2019)
+
+## Bug
+
+*   [[MON-538](https://claranet-morea.atlassian.net/browse/MON-538)] - [Datadog] PagerDuty api_token gets replaced every time
+
+## Documentation
+
+*   [[MON-519](https://claranet-morea.atlassian.net/browse/MON-519)] - Opensource integrations and monitors
+
 # v3.1.0 (September 06, 2019)
 
 ## Improvement
