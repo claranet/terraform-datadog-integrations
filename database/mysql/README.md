@@ -7,7 +7,9 @@ module "datadog-integrations-database-mysql" {
   source = "claranet/integrations/datadog//database/mysql"
   version = "{revision}"
 
-  services  = var.pagerduty_services
+  mysql_server_host           = var.mysql_host
+  mysql_server_admin_login    = var.mysql_admin_login
+  mysql_server_admin_password = var.mysql_admin_password
 }
 
 ```
