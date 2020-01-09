@@ -87,3 +87,5 @@ module "datadog-my-integration" {
 - [cloud](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/)
 	- [aws](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/aws/)
 	- [gcp](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/gcp/)
+- [database](https://github.com/claranet/terraform-datadog-integrations/tree/master/database/)
+	- [mysql](https://github.com/claranet/terraform-datadog-integrations/tree/master/database/mysql/)
