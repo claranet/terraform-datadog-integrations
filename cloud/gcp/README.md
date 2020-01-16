@@ -18,8 +18,16 @@ module "datadog-integrations-cloud-gcp" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | gcp\_project\_id | GCP project id for use with the Datadog GCP integration | string | n/a | yes |
-| gcp\_service\_account\_id | GCP service account id for use with the Datadog GCP integration | string | n/a | yes |
+| gcp\_service\_account\_id | GCP service account id for use with the Datadog GCP integration | string | `""` | no |
 | host\_filters | Filters to include or exclude metrics retrieved from the Datadog GCP integration | list | `[ "dd_monitoring:enabled" ]` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| google\_client\_id | The client id used in the service_account created, if gcp_service_account_id was not provided |
+| google\_service\_account\_email | The email of the service_account created, if gcp_service_account_id was not provided |
+| google\_service\_account\_key\_id | The id of the service_account key just created |
 
 ## Related documentation
 
@@ -27,9 +35,11 @@ DataDog documentation: [https://docs.datadoghq.com/integrations/google_cloud_pla
 
 ## Requirements
 
-**WARNING:** The GCP integration has to first be manually enabled in [the Datadog web console](https://myaccount.datadoghq.com/account/settings#integrations/google-cloud-platform)
+**WARNING:** This module uses google_project_iam_member which is not compatible with IAM permissions set externally and authoritatively managed with google_project_iam_policy.
 
-You need to configure you GCP provider.
+You need to **install by hand** datadog web interface the **Google Cloud Platform integration**. You'll then need to create by hand the api and app key to be able to fill its in the terraform.tfvars.
+
+You need to configure your GCP provider.
 Credentials could be set in your `terraform.tfvars`.
 
 ```
