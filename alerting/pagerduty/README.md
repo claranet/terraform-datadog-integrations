@@ -7,7 +7,7 @@ module "datadog-integrations-alerting-pagerduty" {
   source      = "claranet/integrations/datadog//alerting/pagerduty"
   version     = "{revision}"
 
-  services  = var.pagerduty_services
+  services    = var.pagerduty_services
 }
 
 ```
