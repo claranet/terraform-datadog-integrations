@@ -2,12 +2,12 @@
 
 ## How to use this module
 
-```
+```hcl
 module "datadog-integrations-alerting-pagerduty" {
-  source = "claranet/integrations/datadog//alerting/pagerduty"
-  version = "{revision}"
+  source      = "claranet/integrations/datadog//alerting/pagerduty"
+  version     = "{revision}"
 
-  services  = var.pagerduty_services
+  services    = var.pagerduty_services
 }
 
 ```
@@ -15,10 +15,14 @@ module "datadog-integrations-alerting-pagerduty" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| api\_token | Pagerduty API token | string | `""` | no |
-| services | Pagerduty service name and service key couple | map(string) | n/a | yes |
-| subdomain | Pagerduty subdomain for your organisation | string | `"claranet"` | no |
+|------|-------------|------|---------|:-----:|
+| api\_token | Pagerduty API token | `string` | `""` | no |
+| services | Pagerduty service name and service key couple | `map(string)` | n/a | yes |
+| subdomain | Pagerduty subdomain for your organisation | `string` | `"claranet"` | no |
+
+## Outputs
+
+No output.
 
 ## Related documentation
 

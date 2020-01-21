@@ -2,10 +2,10 @@
 
 ## How to use this module
 
-```
+```hcl
 module "datadog-integrations-cloud-aws" {
-  source = "claranet/integrations/datadog//cloud/aws"
-  version = "{revision}"
+  source      = "claranet/integrations/datadog//cloud/aws"
+  version     = "{revision}"
 
   aws_account = var.aws_account
 }
@@ -15,12 +15,12 @@ module "datadog-integrations-cloud-aws" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| account\_specific\_namespace\_rules | Namespaces to limit metric collection for datadog aws integration | map | `{}` | no |
-| aws\_account |  | string | n/a | yes |
-| datadog\_aws\_account\_id | AWS account_id of Datadog | string | `"464622532012"` | no |
-| filter\_tags | Filters tags to limit metrics collection on EC2 for datadog aws integration | list | `[ "dd_monitoring:enabled" ]` | no |
-| host\_tags | Tags to add all metrics retrieved from the datadog aws integration | list | `[]` | no |
+|------|-------------|------|---------|:-----:|
+| account\_specific\_namespace\_rules | Namespaces to limit metric collection for datadog aws integration | `map` | `{}` | no |
+| aws\_account | n/a | `any` | n/a | yes |
+| datadog\_aws\_account\_id | AWS account\_id of Datadog | `string` | `"464622532012"` | no |
+| filter\_tags | Filters tags to limit metrics collection on EC2 for datadog aws integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]<br></pre> | no |
+| host\_tags | Tags to add all metrics retrieved from the datadog aws integration | `list` | `[]` | no |
 
 ## Outputs
 
