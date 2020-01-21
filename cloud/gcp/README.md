@@ -16,18 +16,18 @@ module "datadog-integrations-cloud-gcp" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| gcp\_project\_id | GCP project id for use with the Datadog GCP integration | string | n/a | yes |
-| gcp\_service\_account\_id | GCP service account id for use with the Datadog GCP integration | string | `""` | no |
-| host\_filters | Filters to include or exclude metrics retrieved from the Datadog GCP integration | list | `[ "dd_monitoring:enabled" ]` | no |
+|------|-------------|------|---------|:-----:|
+| gcp\_project\_id | GCP project id for use with the Datadog GCP integration | `string` | n/a | yes |
+| gcp\_service\_account\_id | GCP service account id for use with the Datadog GCP integration | `string` | `""` | no |
+| host\_filters | Filters to include or exclude metrics retrieved from the Datadog GCP integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]<br></pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| google\_client\_id | The client id used in the service_account created, if gcp_service_account_id was not provided |
-| google\_service\_account\_email | The email of the service_account created, if gcp_service_account_id was not provided |
-| google\_service\_account\_key\_id | The id of the service_account key just created |
+| google\_client\_id | The client id used in the service\_account created, if gcp\_service\_account\_id was not provided |
+| google\_service\_account\_email | The email of the service\_account created, if gcp\_service\_account\_id was not provided |
+| google\_service\_account\_key\_id | The id of the service\_account key just created |
 
 ## Related documentation
 
