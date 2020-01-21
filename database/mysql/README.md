@@ -2,10 +2,10 @@
 
 ## How to use this module
 
-```
+```hcl
 module "datadog-integrations-database-mysql" {
-  source = "claranet/integrations/datadog//database/mysql"
-  version = "{revision}"
+  source      = "claranet/integrations/datadog//database/mysql"
+  version     = "{revision}"
 
   mysql_server_host           = var.mysql_host
   mysql_server_admin_login    = var.mysql_admin_login

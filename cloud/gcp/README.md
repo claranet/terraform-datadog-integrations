@@ -2,10 +2,10 @@
 
 ## How to use this module
 
-```
+```hcl
 module "datadog-integrations-cloud-gcp" {
-  source = "claranet/integrations/datadog//cloud/gcp"
-  version = "{revision}"
+  source      = "claranet/integrations/datadog//cloud/gcp"
+  version     = "{revision}"
 
   gcp_service_account_id = var.gcp_service_account_id
   gcp_project_id         = var.gcp_project_id

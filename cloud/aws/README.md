@@ -2,10 +2,10 @@
 
 ## How to use this module
 
-```
+```hcl
 module "datadog-integrations-cloud-aws" {
-  source = "claranet/integrations/datadog//cloud/aws"
-  version = "{revision}"
+  source      = "claranet/integrations/datadog//cloud/aws"
+  version     = "{revision}"
 
   aws_account = var.aws_account
 }
