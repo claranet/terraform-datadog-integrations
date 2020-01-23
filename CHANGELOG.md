@@ -1,4 +1,15 @@
 
+# v3.3.0 (January 23, 2020)
+
+## Improvement
+
+*   [[MON-552](https://claranet-morea.atlassian.net/browse/MON-552)] - MySQL Datadog config as TF module
+*   [[MON-559](https://claranet-morea.atlassian.net/browse/MON-559)] - Remove awk hack and use terraform-docs 0.8.0
+
+## New Feature
+
+*   [[MON-548](https://claranet-morea.atlassian.net/browse/MON-548)] - GCP automatic service account creation for datadog integration
+
 # v3.2.0 (December 13, 2019)
 
 ## Bug
