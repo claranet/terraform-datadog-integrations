@@ -37,7 +37,7 @@ resource "google_project_iam_member" "datadog_service_account_membership" {
 
   project = var.gcp_project_id
   role    = each.value
-  member  = "serviceAccount:${local.id_to_use}"
+  member  = "serviceAccount:${google_service_account.datadog_service_account[0].account_id}"
 }
 
 locals {
