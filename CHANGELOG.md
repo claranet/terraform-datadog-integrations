@@ -1,4 +1,10 @@
 
+# v3.4.0 (March 30, 2020)
+
+## Improvement
+
+*   [[MON-575](https://claranet-morea.atlassian.net/browse/MON-575)] - update aws integration permissions including steps function
+
 # v3.3.0 (January 23, 2020)
 
 ## Improvement
