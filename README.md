@@ -17,14 +17,16 @@ Here is the minimum version required to use these modules of integrations.
 
 ```
 terraform {
-  required_version = ">= 0.12.19"
+  required_version = ">= 0.12.26"
 }
 
 ```
 
+Note: terraform 0.12.26+ is required as it the first version compatible with, but ignoring, the `source` argument for provider requirements introduced in terraform 0.13.0.
+
 ### DataDog provider
 
-Here is the last tester terraform provider version for datadog but next versions should work too.
+Here is the last tested terraform provider version for datadog but next versions should work too.
 
 ```
 provider "datadog" {
