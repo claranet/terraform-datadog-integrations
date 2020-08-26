@@ -17,6 +17,7 @@ module "datadog-integrations-cloud-gcp" {
 
 | Name | Version |
 |------|---------|
+| terraform | >= 0.12.26 |
 | random | ~> 2.2 |
 
 ## Inputs

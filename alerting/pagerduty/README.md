@@ -16,7 +16,7 @@ module "datadog-integrations-alerting-pagerduty" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | >= 0.12.26 |
 | datadog | >= 2.1.0 |
 
 ## Inputs

@@ -18,7 +18,7 @@ module "datadog-integrations-database-mysql" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | >= 0.12.26 |
 | mysql | >= 1.6.0 |
 
 ## Inputs
