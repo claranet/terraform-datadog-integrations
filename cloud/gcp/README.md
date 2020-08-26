@@ -13,13 +13,19 @@ module "datadog-integrations-cloud-gcp" {
 
 ```
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| random | ~> 2.2 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | gcp\_project\_id | GCP project id for use with the Datadog GCP integration | `string` | n/a | yes |
 | gcp\_service\_account\_id | GCP service account id for use with the Datadog GCP integration | `string` | `""` | no |
-| host\_filters | Filters to include or exclude metrics retrieved from the Datadog GCP integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]<br></pre> | no |
+| host\_filters | Filters to include or exclude metrics retrieved from the Datadog GCP integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]</pre> | no |
 
 ## Outputs
 

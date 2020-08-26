@@ -12,14 +12,18 @@ module "datadog-integrations-cloud-aws" {
 
 ```
 
+## Requirements
+
+No requirements.
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | account\_specific\_namespace\_rules | Namespaces to limit metric collection for datadog aws integration | `map` | `{}` | no |
 | aws\_account | n/a | `any` | n/a | yes |
 | datadog\_aws\_account\_id | AWS account\_id of Datadog | `string` | `"464622532012"` | no |
-| filter\_tags | Filters tags to limit metrics collection on EC2 for datadog aws integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]<br></pre> | no |
+| filter\_tags | Filters tags to limit metrics collection on EC2 for datadog aws integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]</pre> | no |
 | host\_tags | Tags to add all metrics retrieved from the datadog aws integration | `list` | `[]` | no |
 
 ## Outputs
