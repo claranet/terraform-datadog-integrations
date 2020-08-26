@@ -14,10 +14,17 @@ module "datadog-integrations-database-mysql" {
 
 ```
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+| mysql | >= 1.6.0 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | connection\_use\_tls | Set if TLS should be used for db connection. One of `false`, `true`, or `skip-verify`. See https://www.terraform.io/docs/providers/mysql/index.html#tls | `string` | `"false"` | no |
 | create\_monitoring\_user | `true` if the user used for monitoring should be created | `bool` | `true` | no |
 | monitoring\_user\_host | MySQL user host for monitoring | `string` | `"%"` | no |

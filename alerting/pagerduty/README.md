@@ -12,10 +12,17 @@ module "datadog-integrations-alerting-pagerduty" {
 
 ```
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+| datadog | >= 2.1.0 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | api\_token | Pagerduty API token | `string` | `""` | no |
 | services | Pagerduty service name and service key couple | `map(string)` | n/a | yes |
 | subdomain | Pagerduty subdomain for your organisation | `string` | `"claranet"` | no |
