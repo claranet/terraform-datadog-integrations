@@ -9,7 +9,7 @@ stages:
   - deploy
 
 auto_update:
-  image: claranet/datadog-terraform:latest
+  image: claranet/datadog-terraform:0.13.0
   stage: test
   script:
     - ./scripts/auto_update.sh ./
