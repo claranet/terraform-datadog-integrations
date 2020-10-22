@@ -32,6 +32,7 @@ data "aws_iam_policy_document" "datadog_integration_policy" {
       "ecs:List*",
       "elasticache:Describe*",
       "elasticache:List*",
+      "elasticfilesystem:DescribeAccessPoints",
       "elasticfilesystem:DescribeFileSystems",
       "elasticfilesystem:DescribeTags",
       "elasticloadbalancing:Describe*",
