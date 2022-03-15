@@ -1,3 +1,8 @@
+# v4.0.0 (March 15, 2022)
+
+## Improvement
+
+* Support Datadog 3.0.0 (#1)
 
 # v3.5.0 (August 27, 2020)
 
