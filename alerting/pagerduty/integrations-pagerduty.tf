@@ -5,7 +5,6 @@ resource "datadog_integration_pagerduty" "pagerduty" {
     ]
   }
 
-  individual_services = true
   subdomain           = var.subdomain
   api_token           = var.api_token
 }

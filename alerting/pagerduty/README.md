@@ -16,21 +16,37 @@ module "datadog-integrations-alerting-pagerduty" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.26 |
-| datadog | >= 2.1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.31 |
+| <a name="requirement_datadog"></a> [datadog](#requirement\_datadog) | >= 3.0.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_datadog"></a> [datadog](#provider\_datadog) | >= 3.0.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [datadog_integration_pagerduty.pagerduty](https://registry.terraform.io/providers/Datadog/datadog/latest/docs/resources/integration_pagerduty) | resource |
+| [datadog_integration_pagerduty_service_object.service](https://registry.terraform.io/providers/Datadog/datadog/latest/docs/resources/integration_pagerduty_service_object) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| api\_token | Pagerduty API token | `string` | `""` | no |
-| services | Pagerduty service name and service key couple | `map(string)` | n/a | yes |
-| subdomain | Pagerduty subdomain for your organisation | `string` | `"claranet"` | no |
+| <a name="input_api_token"></a> [api\_token](#input\_api\_token) | Pagerduty API token | `string` | `""` | no |
+| <a name="input_services"></a> [services](#input\_services) | Pagerduty service name and service key couple | `map(string)` | n/a | yes |
+| <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | Pagerduty subdomain for your organisation | `string` | `"claranet"` | no |
 
 ## Outputs
 
-No output.
-
+No outputs.
 ## Related documentation
 
 DataDog documentation: [https://docs.datadoghq.com/integrations/pagerduty/](https://docs.datadoghq.com/integrations/pagerduty/)
