@@ -1,11 +1,11 @@
 # Datadog Integrations
 [![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](LICENSE) [![ ](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/badges/master/pipeline.svg)](https://git.fr.clara.net/claranet/pt-monitoring/projects/datadog/terraform/integrations/commits/master)
 
-This repository aims to help to configure [Datadog](https://www.datadoghq.com/) integrations using [Terraform](https://www.terraform.io/) modules.
+This repository aims to help to configure [Datadog](https://www.datadoghq.com/) integrations using [Terraform](https://www.terraform.io/) or [OpenTofu](https://opentofu.org/) modules.
 
 ## Important notes
 
-* This repository provide multiple Terraform modules which could be imported, you must choose the one(s) you need.
+* This repository provide multiple Terraform/OpenTofu modules which could be imported, you must choose the one(s) you need.
 * Each module should be usable by default but you should be able to configure some specicities if you need.
 * You will find a complete `README.md` on each module, explaining how to use it.
 
@@ -104,6 +104,7 @@ For example, this will regenerate every READMEs thanks to [terraform-docs](https
 	- [pagerduty](https://github.com/claranet/terraform-datadog-integrations/tree/master/alerting/pagerduty/)
 - [cloud](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/)
 	- [aws](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/aws/)
+	- [azure](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/azure/)
 	- [gcp](https://github.com/claranet/terraform-datadog-integrations/tree/master/cloud/gcp/)
 - [database](https://github.com/claranet/terraform-datadog-integrations/tree/master/database/)
 	- [mysql](https://github.com/claranet/terraform-datadog-integrations/tree/master/database/mysql/)
