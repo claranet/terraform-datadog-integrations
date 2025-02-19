@@ -1,29 +1,8 @@
-# CLOUD Azure DataDog integrations
+# CLOUD AZURE DataDog integrations
 
 ## How to use this module
 
 ```hcl
-data "azurerm_subscription" "main" {}
-
-module "sp" {
-  source  = "claranet/service-principal/azurerm"
-  version = "x.x.x"
-
-  display_name = "claranet-tools"
-  owners       = data.azuread_users.owners.object_ids
-
-  scope_assignment = [
-    {
-      scope     = data.azurerm_subscription.main.id
-      role_name = "Reader"
-    },
-  ]
-
-  groups_member = {
-    (data.azuread_group.readers.display_name) = data.azuread_group.readers.object_id
-  }
-}
-
 module "datadog-integrations-cloud-azure" {
   source      = "claranet/integrations/datadog//cloud/azure"
   version     = "{revision}"
@@ -38,7 +17,6 @@ module "datadog-integrations-cloud-azure" {
 
 ```
 
-<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -77,8 +55,44 @@ No modules.
 ## Outputs
 
 No outputs.
-
-<!-- END_TF_DOCS -->
 ## Related documentation
 
  - [DataDog documentation](https://docs.datadoghq.com/integrations/azure/#setup)
+
+## Usage with Azure Service Principal TF module
+
+```hcl
+data "azurerm_subscription" "main" {}
+
+module "sp" {
+  source  = "claranet/service-principal/azurerm"
+  version = "x.x.x"
+
+  display_name = "claranet-tools"
+  owners       = data.azuread_users.owners.object_ids
+
+  scope_assignment = [
+    {
+      scope     = data.azurerm_subscription.main.id
+      role_name = "Reader"
+    },
+  ]
+
+  groups_member = {
+    (data.azuread_group.readers.display_name) = data.azuread_group.readers.object_id
+  }
+}
+
+module "datadog-integrations-cloud-azure" {
+  source      = "claranet/integrations/datadog//cloud/azure"
+  version     = "{revision}"
+
+  azure_tenant_id = data.azurerm_subscription.main.tenant_id
+
+  azure_service_principal = {
+    client_id     = module.sp.app_id
+    client_secret = module.sp.secret_key
+  }
+}
+
+```
