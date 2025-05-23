@@ -3,7 +3,7 @@ resource "datadog_webhook" "datadog_integration" {
   url       = var.url
   encode_as = "json"
   custom_headers = jsonencode(
-    { "Authorization" : "Bearer ${var.token}" }
+    merge({ "Authorization" : "Bearer ${var.token}" }, var.additional_headers)
   )
   payload = jsonencode(
     {
