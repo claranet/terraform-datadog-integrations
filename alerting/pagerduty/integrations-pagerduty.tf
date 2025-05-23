@@ -5,8 +5,8 @@ resource "datadog_integration_pagerduty" "pagerduty" {
     ]
   }
 
-  subdomain           = var.subdomain
-  api_token           = var.api_token
+  subdomain = var.subdomain
+  api_token = var.api_token
 }
 
 resource "datadog_integration_pagerduty_service_object" "service" {
