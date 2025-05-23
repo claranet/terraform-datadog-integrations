@@ -17,7 +17,7 @@ variable "enabled" {
 variable "url" {
   description = "The ingest-alerting URL to use"
   type        = string
-  default     = "https://ingest-alerting.fr.clara.net/splunk"
+  default     = "https://ingest-alerting.fr.clara.net/datadog"
 }
 
 variable "token" {
