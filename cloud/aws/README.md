@@ -48,7 +48,7 @@ No modules.
 | <a name="input_account_specific_namespace_rules"></a> [account\_specific\_namespace\_rules](#input\_account\_specific\_namespace\_rules) | Namespaces to limit metric collection for datadog aws integration | `map` | `{}` | no |
 | <a name="input_aws_account"></a> [aws\_account](#input\_aws\_account) | n/a | `any` | n/a | yes |
 | <a name="input_datadog_aws_account_id"></a> [datadog\_aws\_account\_id](#input\_datadog\_aws\_account\_id) | AWS account\_id of Datadog | `string` | `"464622532012"` | no |
-| <a name="input_filter_tags"></a> [filter\_tags](#input\_filter\_tags) | Filters tags to limit metrics collection on EC2 for datadog aws integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]</pre> | no |
+| <a name="input_filter_tags"></a> [filter\_tags](#input\_filter\_tags) | Filters tags to limit metrics collection on EC2 for datadog aws integration | `list` | <pre>[<br>  "dd_monitored:true"<br>]</pre> | no |
 | <a name="input_host_tags"></a> [host\_tags](#input\_host\_tags) | Tags to add all metrics retrieved from the datadog aws integration | `list` | `[]` | no |
 
 ## Outputs

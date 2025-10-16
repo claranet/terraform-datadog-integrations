@@ -49,7 +49,7 @@ No modules.
 | <a name="input_azure_tenant_id"></a> [azure\_tenant\_id](#input\_azure\_tenant\_id) | Azure Tenant ID. | `string` | n/a | yes |
 | <a name="input_cspm_enabled"></a> [cspm\_enabled](#input\_cspm\_enabled) | When enabled, Datadog’s Cloud Security Management product scans resource configurations monitored by this app registration. Note: This requires `resource_collection_enabled` to be set to `true`. | `bool` | `false` | no |
 | <a name="input_custom_metrics_enabled"></a> [custom\_metrics\_enabled](#input\_custom\_metrics\_enabled) | Enable custom metrics for Azure integration. | `bool` | `false` | no |
-| <a name="input_filter_tags"></a> [filter\_tags](#input\_filter\_tags) | Filters tags to limit metrics collection for Datadog Azure integration. | `list(string)` | <pre>[<br>  "dd_monitoring:enabled"<br>]</pre> | no |
+| <a name="input_filter_tags"></a> [filter\_tags](#input\_filter\_tags) | Filters tags to limit metrics collection for Datadog Azure integration. | `list(string)` | <pre>[<br>  "dd_monitored:true"<br>]</pre> | no |
 | <a name="input_resource_collection_enabled"></a> [resource\_collection\_enabled](#input\_resource\_collection\_enabled) | When enabled, Datadog collects metadata and configuration info from cloud resources (such as compute instances, databases, and load balancers) monitored by this app registration/Service Principal. | `bool` | `null` | no |
 
 ## Outputs

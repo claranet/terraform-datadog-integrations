@@ -11,5 +11,5 @@ variable "gcp_project_id" {
 
 variable "host_filters" {
   description = "Filters to include or exclude metrics retrieved from the Datadog GCP integration"
-  default     = ["dd_monitoring:enabled"]
+  default     = ["dd_monitored:true"]
 }

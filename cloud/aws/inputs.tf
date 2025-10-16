@@ -9,7 +9,7 @@ variable "datadog_aws_account_id" {
 
 variable "filter_tags" {
   description = "Filters tags to limit metrics collection on EC2 for datadog aws integration"
-  default     = ["dd_monitoring:enabled"]
+  default     = ["dd_monitored:true"]
 }
 
 variable "host_tags" {

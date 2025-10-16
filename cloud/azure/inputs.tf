@@ -15,7 +15,7 @@ variable "azure_service_principal" {
 variable "filter_tags" {
   description = "Filters tags to limit metrics collection for Datadog Azure integration."
   type        = list(string)
-  default     = ["dd_monitoring:enabled"]
+  default     = ["dd_monitored:true"]
 }
 
 variable "automute_enabled" {

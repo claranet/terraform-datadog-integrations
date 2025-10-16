@@ -51,7 +51,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_gcp_project_id"></a> [gcp\_project\_id](#input\_gcp\_project\_id) | GCP project id for use with the Datadog GCP integration | `string` | n/a | yes |
 | <a name="input_gcp_service_account_id"></a> [gcp\_service\_account\_id](#input\_gcp\_service\_account\_id) | GCP service account id for use with the Datadog GCP integration | `string` | `""` | no |
-| <a name="input_host_filters"></a> [host\_filters](#input\_host\_filters) | Filters to include or exclude metrics retrieved from the Datadog GCP integration | `list` | <pre>[<br>  "dd_monitoring:enabled"<br>]</pre> | no |
+| <a name="input_host_filters"></a> [host\_filters](#input\_host\_filters) | Filters to include or exclude metrics retrieved from the Datadog GCP integration | `list` | <pre>[<br>  "dd_monitored:true"<br>]</pre> | no |
 
 ## Outputs
 
