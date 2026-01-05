@@ -1,9 +1,68 @@
+data "datadog_integration_aws_external_id" "main" {
+  aws_account_id = var.aws_account_id
+
+  lifecycle {
+    enabled = var.aws_iam_role_enabled
+  }
+}
+
+resource "aws_iam_role" "dd_integration_role" {
+  name        = local.role_name
+  description = "Datadog AWS Integration Role according to https://docs.datadoghq.com/integrations/aws"
+
+  assume_role_policy = data.aws_iam_policy_document.dd_trust_relationship.json
+
+  lifecycle {
+    enabled = var.aws_iam_role_enabled
+  }
+}
+
+data "aws_iam_policy_document" "dd_trust_relationship" {
+  statement {
+    sid     = "DatadogAWSTrustRelationship"
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type = "AWS"
+
+      identifiers = [
+        "arn:aws:iam::${var.datadog_aws_account_id}:root",
+      ]
+    }
+
+    condition {
+      test     = "StringEquals"
+      values   = [data.datadog_integration_aws_external_id.main.external_id]
+      variable = "sts:ExternalId"
+    }
+  }
+
+  lifecycle {
+    enabled = var.aws_iam_role_enabled
+  }
+}
+
+resource "aws_iam_policy_attachment" "allow_dd_role" {
+  name       = "Allow Datadog PolicyAccess via Role"
+  roles      = [aws_iam_role.dd_integration_role.name]
+  policy_arn = aws_iam_policy.dd_integration_policy.arn
+
+  lifecycle {
+    enabled = var.aws_iam_role_enabled
+  }
+}
+
 resource "aws_iam_policy" "dd_integration_policy" {
   name        = "DatadogAWSIntegrationPolicy"
   path        = "/"
   description = "Datadog integration policy according to https://docs.datadoghq.com/integrations/aws/"
 
   policy = data.aws_iam_policy_document.datadog_integration_policy.json
+
+  lifecycle {
+    enabled = var.aws_iam_role_enabled
+  }
 }
 
 data "aws_iam_policy_document" "datadog_integration_policy" {
@@ -12,6 +71,7 @@ data "aws_iam_policy_document" "datadog_integration_policy" {
     effect = "Allow"
 
     actions = [
+      "account:GetAccountInformation",
       "apigateway:GET",
       "autoscaling:Describe*",
       "budgets:ViewBudget",
@@ -84,5 +144,8 @@ data "aws_iam_policy_document" "datadog_integration_policy" {
 
     resources = ["*"]
   }
-}
 
+  lifecycle {
+    enabled = var.aws_iam_role_enabled
+  }
+}
