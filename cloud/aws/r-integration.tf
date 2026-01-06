@@ -32,7 +32,7 @@ resource "datadog_integration_aws_account" "main" {
   }
 
   resources_config {
-    extended_collection = false
+    extended_collection = var.resource_collection_enabled
   }
 
   logs_config {

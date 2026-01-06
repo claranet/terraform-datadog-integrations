@@ -39,6 +39,7 @@ No modules.
 |------|------|
 | [aws_iam_policy.dd_integration_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy_attachment.allow_dd_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment) | resource |
+| [aws_iam_policy_attachment.allow_security_audit_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment) | resource |
 | [aws_iam_role.dd_integration_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [datadog_integration_aws_account.main](https://registry.terraform.io/providers/Datadog/datadog/latest/docs/resources/integration_aws_account) | resource |
 | [aws_iam_policy_document.datadog_integration_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
@@ -54,6 +55,7 @@ No modules.
 | datadog\_aws\_account\_id | AWS account\_id of Datadog | `string` | `"464622532012"` | no |
 | env | Environment configuration for Datadog integration | `string` | n/a | yes |
 | metrics\_config | Metrics configuration for Datadog AWS integration | <pre>object({<br>    automute_enabled : optional(bool, true),<br>    collect_cloudwatch_alarms : optional(bool, false),<br>    collect_custom_metrics : optional(bool, false),<br>    enabled : optional(bool, true),<br>    namespace_filters : optional(object({<br>      exclude_only : optional(list(string), null),<br>      include_only : optional(list(string), null),<br>      }), {<br>      exclude_only = ["AWS/ElasticMapReduce", "AWS/SQS", "AWS/Usage"]<br>    }),<br>    tag_filters : optional(object({<br>      namespace : string,<br>      tags : list(string),<br>      }), {<br>      namespace = "AWS/EC2"<br>      tags      = ["dd_monitored:true"]<br>    }),<br>  })</pre> | `{}` | no |
+| resource\_collection\_enabled | Enable resource collection for Datadog AWS integration | `bool` | `true` | no |
 
 ## Outputs
 

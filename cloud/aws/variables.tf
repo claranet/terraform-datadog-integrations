@@ -43,3 +43,9 @@ variable "aws_iam_role_enabled" {
   type        = bool
   default     = false
 }
+
+variable "resource_collection_enabled" {
+  description = "Enable resource collection for Datadog AWS integration"
+  type        = bool
+  default     = true
+}
