@@ -1,7 +1,7 @@
 resource "datadog_integration_aws_account" "main" {
   account_tags   = [for k, v in var.metrics_tags : "${k}:${v}"]
   aws_account_id = var.aws_account_id
-  aws_partition  = "aws"
+  aws_partition  = var.aws_partition
 
   aws_regions {
     include_all = true

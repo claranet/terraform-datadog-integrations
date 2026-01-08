@@ -51,10 +51,11 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | aws\_account\_id | AWS account configuration for Datadog integration | `string` | n/a | yes |
-| aws\_iam\_role\_enabled | Enable IAM role deployment for Datadog AWS integration | `bool` | `false` | no |
+| aws\_iam\_role\_enabled | Enable IAM role deployment for Datadog AWS integration | `bool` | `true` | no |
+| aws\_partition | AWS partition for Datadog integration | `string` | `"aws"` | no |
 | datadog\_aws\_account\_id | AWS account\_id of Datadog | `string` | `"464622532012"` | no |
-| env | Environment configuration for Datadog integration | `string` | n/a | yes |
 | metrics\_config | Metrics configuration for Datadog AWS integration | <pre>object({<br>    automute_enabled : optional(bool, true),<br>    collect_cloudwatch_alarms : optional(bool, false),<br>    collect_custom_metrics : optional(bool, false),<br>    enabled : optional(bool, true),<br>    namespace_filters : optional(object({<br>      exclude_only : optional(list(string), null),<br>      include_only : optional(list(string), null),<br>      }), {<br>      exclude_only = ["AWS/ElasticMapReduce", "AWS/SQS", "AWS/Usage"]<br>    }),<br>    tag_filters : optional(object({<br>      namespace : string,<br>      tags : list(string),<br>      }), {<br>      namespace = "AWS/EC2"<br>      tags      = ["dd_monitored:true"]<br>    }),<br>  })</pre> | `{}` | no |
+| metrics\_tags | Tags to apply to metrics collected from AWS | `map(string)` | `{}` | no |
 | resource\_collection\_enabled | Enable resource collection for Datadog AWS integration | `bool` | `true` | no |
 
 ## Outputs

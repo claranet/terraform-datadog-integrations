@@ -3,6 +3,12 @@ variable "aws_account_id" {
   type        = string
 }
 
+variable "aws_partition" {
+  description = "AWS partition for Datadog integration"
+  type        = string
+  default     = "aws"
+}
+
 variable "datadog_aws_account_id" {
   description = "AWS account_id of Datadog"
   type        = string
