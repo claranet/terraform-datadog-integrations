@@ -3,11 +3,6 @@ variable "aws_account_id" {
   type        = string
 }
 
-variable "env" {
-  description = "Environment configuration for Datadog integration"
-  type        = string
-}
-
 variable "datadog_aws_account_id" {
   description = "AWS account_id of Datadog"
   type        = string
@@ -41,11 +36,17 @@ variable "metrics_config" {
 variable "aws_iam_role_enabled" {
   description = "Enable IAM role deployment for Datadog AWS integration"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "resource_collection_enabled" {
   description = "Enable resource collection for Datadog AWS integration"
   type        = bool
   default     = true
+}
+
+variable "metrics_tags" {
+  description = "Tags to apply to metrics collected from AWS"
+  type        = map(string)
+  default     = {}
 }

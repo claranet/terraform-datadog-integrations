@@ -1,5 +1,5 @@
 resource "datadog_integration_aws_account" "main" {
-  account_tags   = ["env:${var.env}"]
+  account_tags   = [for k, v in var.metrics_tags : "${k}:${v}"]
   aws_account_id = var.aws_account_id
   aws_partition  = "aws"
 

@@ -1,3 +1,4 @@
 locals {
-  role_name = "DatadogAWSIntegrationRole"
+  policy_name = "claranet-datadog-integration-policy"
+  role_name   = "claranet-datadog-integration-role"
 }

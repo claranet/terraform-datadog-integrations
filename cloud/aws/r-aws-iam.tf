@@ -64,7 +64,7 @@ resource "aws_iam_policy_attachment" "allow_security_audit_policy" {
 }
 
 resource "aws_iam_policy" "dd_integration_policy" {
-  name        = "DatadogAWSIntegrationPolicy"
+  name        = local.policy_name
   path        = "/"
   description = "Datadog integration policy according to https://docs.datadoghq.com/integrations/aws/"
 
