@@ -28,14 +28,21 @@ variable "metrics_config" {
       }), {
       exclude_only = ["AWS/ElasticMapReduce", "AWS/SQS", "AWS/Usage"]
     }),
-    tag_filters : optional(object({
+    tag_filters : optional(list(object({
       namespace : string,
       tags : list(string),
-      }), {
-      namespace = "AWS/EC2"
-      tags      = ["dd_monitored:true"]
-    }),
-  })
+    })), [
+      {
+        namespace = "AWS/EC2"
+        tags = ["claranet_monitored:true"]
+      }, {
+        namespace = "AWS/Lambda"
+        tags = [
+          "claranet_monitored:true",
+        ]
+      }
+    ],
+    )})
   default = {}
 }
 
