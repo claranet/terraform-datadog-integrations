@@ -53,10 +53,9 @@ resource "aws_iam_policy_attachment" "allow_dd_role" {
   }
 }
 
-resource "aws_iam_policy_attachment" "allow_security_audit_policy" {
-  name       = "Allow SecurityAudit policy via Role"
-  roles      = [aws_iam_role.dd_integration_role.name]
+resource "aws_iam_role_policy_attachment" "allow_security_audit_policy" {
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+  role       = aws_iam_role.dd_integration_role.name
 
   lifecycle {
     enabled = var.aws_iam_role_enabled && var.resource_collection_enabled
