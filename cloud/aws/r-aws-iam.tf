@@ -4,6 +4,10 @@ data "datadog_integration_aws_external_id" "main" {
   lifecycle {
     enabled = var.aws_iam_role_enabled
   }
+
+  depends_on = [
+    datadog_integration_aws_account.main
+  ]
 }
 
 resource "aws_iam_role" "dd_integration_role" {
